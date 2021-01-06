@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- main css -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>Display Quotes</title>
+  <style>
+  .max-height {
+    min-height: 100vh;
+  }
+  body {
+    background: black;
+    margin: auto;
+
+  }
+  .quote-container {
+    background: white;
+    margin: 20px 20px;
+  }
+  #generate-btn {
+    color: Red !important;
+    background: White !important;
+    border-color: #64b6ac !important;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  #generate-btn:hover {
+    background: #b09e99 !important;
+    border-color: #b09e99 !important;
+    color: #333333 !important;
+
+  }
+  #d1{
+    margin: 20px 20px;
+  }
+  .author {
+    color: #64b6ac;
+    margin: 20px 20px;
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="conainer">
+    <div class="row max-height align-items-center">
+      <div class="col-11 mx-auto col-md-6 quote-container p-5">
+        <button class="btn-outline-primary text-capitalize my-4 d-block mx-auto" id="generate-btn">generate quote</button>
+      <div id="d1">
+        <h3 class="text-muted">
+          <span id="quote">Brox JavaScript hour 2
+          </span>
+        </h3>
+      </div>
+
+        <h5 class="text-right text-capitalize author">-<span class="quote-author ml-3 ">author</span></h5>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- script js -->
+  <script>
+  //immediate invoked function expression
+  (function() {
+    const quotes = [
+      {
+        quote:
+          "Life is too short and sweet to be spent by cribbing and complaining about things. Here are some random quotes about the most wonderful gift that we've got",
+        author: " Life"
+      },
+      {
+        quote:
+          "Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all",
+        author: "John Kenneth Galbraith"
+      },
+      {
+        quote:
+          "God save me from my friends. I can protect myself from my enemies.",
+        author: "Claude Louis Hector de Villars "
+      },
+      {
+        quote: "The price of anything is the amount of life you exchange for it.",
+        author: "David Thoreau"
+      },
+      {
+        quote:
+          "Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance. ",
+        author: "Charles Lindbergh"
+      },
+      {
+        quote:
+          "A critic is someone who never actually goes to the battle, yet who afterwards comes out shooting the wounded.",
+        author: " Tyne Daly"
+      }
+    ];
+
+    const btn = document.getElementById("generate-btn");
+
+    btn.addEventListener("click", function() {
+      let random = Math.floor(Math.random() * quotes.length);
+      console.log(random);
+
+      document.getElementById("quote").textContent = quotes[random].quote;
+      document.querySelector(".author").textContent = quotes[random].author;
+    });
+  })();
+
+  </script>
+</body>
+
+</html>
